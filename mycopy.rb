@@ -32,12 +32,10 @@ class Janken
     # playerの["グー","チョキ","パー"]
     player_nandayo = player_return_value[1]
 
-    binding.irb
 
     unless player_hand == "0" || player_hand == "1" || player_hand == "2"
       puts "無効な値です。再戦をお願いします"
       return true
-      binding.irb
     end
 
     # enemy の数字が返る
@@ -45,10 +43,10 @@ class Janken
     # ["グー", "チョキ", "パー"]
     enemy_nandayo = enemy_return_value[1]
 
-    # if player_hand == enemy_hand
-    #   puts "あいこだから、もう一回"
-    #   return true
-    # end
+    if player_hand == enemy_hand
+      puts "あいこだから、もう一回"
+      return true
+    end
 
     verdict = (player_hand - enemy_hand + 3) % 3
 
